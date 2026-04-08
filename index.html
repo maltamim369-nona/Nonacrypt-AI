@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aether AI | Enterprise Intelligence Systems</title>
+    <meta name="description" content="Aether AI Consultancy - Leading the future of enterprise intelligence with custom LLMs, Predictive Analytics, and Computer Vision solutions.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#6366f1',
+                            foreground: '#ffffff',
+                        },
+                        accent: '#06b6d4',
+                        background: '#020617',
+                        surface: '#0f172a',
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @layer base {
+            body {
+                @apply bg-background text-white antialiased;
+            }
+        }
+        
+        .glass {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-link.active {
+            @apply text-primary;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#home" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
+                    <i data-lucide="cpu" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-heading font-bold tracking-tighter">
+                    AETHER<span class="text-primary">AI</span>
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#services" class="nav-link text-sm font-semibold transition-colors hover:text-primary text-white/80">Services</a>
+                <a href="#industries" class="nav-link text-sm font-semibold transition-colors hover:text-primary text-white/80">Industries</a>
+                <a href="#approach" class="nav-link text-sm font-semibold transition-colors hover:text-primary text-white/80">Approach</a>
+                <a href="#about" class="nav-link text-sm font-semibold transition-colors hover:text-primary text-white/80">About</a>
+                <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-primary/20">Get Started</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-toggle" class="md:hidden p-2 text-white">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass border-t border-white/5 p-6 flex flex-col gap-4">
+            <a href="#services" class="mobile-nav-link text-lg font-medium">Services</a>
+            <a href="#industries" class="mobile-nav-link text-lg font-medium">Industries</a>
+            <a href="#approach" class="mobile-nav-link text-lg font-medium">Approach</a>
+            <a href="#about" class="mobile-nav-link text-lg font-medium">About</a>
+            <a href="#contact" class="bg-primary text-white text-center py-3 rounded-full font-medium">Get Started</a>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- Home Page -->
+        <section id="home" class="page-section active">
+            <!-- Hero -->
+            <div class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+                <div class="absolute inset-0 -z-10">
+                    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-[128px] animate-pulse"></div>
+                    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[128px] animate-pulse" style="animation-delay: 2s"></div>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+                            <i data-lucide="sparkles" class="w-3 h-3"></i>
+                            The Future of Enterprise
+                        </div>
+                        <h1 class="text-6xl md:text-8xl font-heading font-bold leading-[0.9] tracking-tighter mb-8">
+                            Architecting <br/>
+                            <span class="text-primary">Intelligence.</span>
+                        </h1>
+                        <p class="text-xl text-white/80 leading-relaxed mb-10 max-w-lg">
+                            We build custom AI systems that transform complex data into 
+                            decisive competitive advantages. From LLMs to Computer Vision.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold transition-all shadow-xl shadow-primary/20 flex items-center gap-2">
+                                Start Your Transformation <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#services" class="glass hover:bg-white/5 text-white px-8 py-4 rounded-full font-bold transition-all border border-white/10">
+                                View Capabilities
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="relative hidden lg:block">
+                        <div class="aspect-square rounded-[3rem] glass border border-white/10 p-12 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+                            <div class="relative z-10 text-center">
+                                <div class="text-8xl font-bold tracking-tighter mb-2">2026</div>
+                                <div class="text-sm font-bold uppercase tracking-[0.3em] text-primary">Intelligence Era</div>
+                            </div>
+                        </div>
+                        <!-- Floating Cards -->
+                        <div class="absolute -top-8 -right-8 glass p-6 rounded-2xl shadow-2xl border border-white/10 animate-bounce" style="animation-duration: 4s">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+                                    <i data-lucide="activity" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold">94%</div>
+                                    <div class="text-[10px] uppercase tracking-widest text-white/40">Efficiency Gain</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brief Services -->
+            <div class="py-24 bg-surface/30">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                        <div class="max-w-2xl">
+                            <h2 class="text-4xl font-bold mb-4">Core <span class="text-primary">Capabilities</span></h2>
+                            <p class="text-white/60">We specialize in high-impact AI implementations that bridge the gap between research and production.</p>
+                        </div>
+                        <a href="#services" class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                            All Services <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="p-8 rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i data-lucide="message-square" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">LLM & Generative AI</h3>
+                            <p class="text-white/40 text-sm leading-relaxed mb-6">Custom private models and RAG architectures for enterprise data security.</p>
+                            <a href="#service-llm" class="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2">Details <i data-lucide="chevron-right" class="w-3 h-3"></i></a>
+                        </div>
+                        <div class="p-8 rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Predictive Analytics</h3>
+                            <p class="text-white/40 text-sm leading-relaxed mb-6">Forecasting market trends and operational risks with high-fidelity models.</p>
+                            <a href="#service-predictive" class="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2">Details <i data-lucide="chevron-right" class="w-3 h-3"></i></a>
+                        </div>
+                        <div class="p-8 rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i data-lucide="eye" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Computer Vision</h3>
+                            <p class="text-white/40 text-sm leading-relaxed mb-6">Automated visual inspection and spatial analytics for industrial scale.</p>
+                            <a href="#service-vision" class="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2">Details <i data-lucide="chevron-right" class="w-3 h-3"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brief Industries -->
+            <div class="py-24">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold mb-4">Sector-Specific <span class="text-primary">Intelligence</span></h2>
+                        <p class="text-white/60 max-w-2xl mx-auto">Custom-engineered solutions for the unique challenges of your industry.</p>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                        <a href="#solution-healthcare" class="p-6 rounded-2xl glass border border-white/5 text-center hover:border-primary/50 transition-all group">
+                            <i data-lucide="stethoscope" class="w-8 h-8 mx-auto mb-4 text-blue-500 group-hover:scale-110 transition-transform"></i>
+                            <div class="text-xs font-bold uppercase tracking-widest">Healthcare</div>
+                        </a>
+                        <a href="#solution-finance" class="p-6 rounded-2xl glass border border-white/5 text-center hover:border-primary/50 transition-all group">
+                            <i data-lucide="banknote" class="w-8 h-8 mx-auto mb-4 text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <div class="text-xs font-bold uppercase tracking-widest">Finance</div>
+                        </a>
+                        <a href="#solution-logistics" class="p-6 rounded-2xl glass border border-white/5 text-center hover:border-primary/50 transition-all group">
+                            <i data-lucide="truck" class="w-8 h-8 mx-auto mb-4 text-amber-500 group-hover:scale-110 transition-transform"></i>
+                            <div class="text-xs font-bold uppercase tracking-widest">Logistics</div>
+                        </a>
+                        <a href="#solution-security" class="p-6 rounded-2xl glass border border-white/5 text-center hover:border-primary/50 transition-all group">
+                            <i data-lucide="shield-check" class="w-8 h-8 mx-auto mb-4 text-red-500 group-hover:scale-110 transition-transform"></i>
+                            <div class="text-xs font-bold uppercase tracking-widest">Security</div>
+                        </a>
+                        <a href="#solution-agriculture" class="p-6 rounded-2xl glass border border-white/5 text-center hover:border-primary/50 transition-all group">
+                            <i data-lucide="sprout" class="w-8 h-8 mx-auto mb-4 text-emerald-500 group-hover:scale-110 transition-transform"></i>
+                            <div class="text-xs font-bold uppercase tracking-widest">Agri-AI</div>
+                        </a>
+                        <a href="#solution-manufacturing" class="p-6 rounded-2xl glass border border-white/5 text-center hover:border-primary/50 transition-all group">
+                            <i data-lucide="cpu" class="w-8 h-8 mx-auto mb-4 text-cyan-500 group-hover:scale-110 transition-transform"></i>
+                            <div class="text-xs font-bold uppercase tracking-widest">Smart Factory</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Page -->
+        <section id="services" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-3xl mb-24">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">Our <span class="text-primary">Capabilities</span></h1>
+                    <p class="text-xl text-white/60 leading-relaxed">
+                        We provide end-to-end AI development and strategic consulting 
+                        to help enterprises navigate the complexity of modern intelligence.
+                    </p>
+                </div>
+
+                <div class="grid gap-12">
+                    <!-- LLM -->
+                    <div class="group relative grid lg:grid-cols-2 gap-12 p-10 rounded-[3rem] bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-all duration-500">
+                        <div>
+                            <div class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                                <i data-lucide="message-square" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold mb-4">LLM & Generative AI</h3>
+                            <p class="text-lg text-white/60 leading-relaxed mb-8">
+                                Custom large language models, RAG architectures, and generative agents tailored to your proprietary data.
+                            </p>
+                            <div class="flex flex-wrap gap-4 mb-10">
+                                <div class="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-black border border-white/5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-primary"></i>
+                                    Custom Fine-tuning
+                                </div>
+                                <div class="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-black border border-white/5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-primary"></i>
+                                    RAG Implementation
+                                </div>
+                                <div class="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-black border border-white/5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-primary"></i>
+                                    AI Agents
+                                </div>
+                            </div>
+                            <a href="#service-llm" class="bg-primary text-white px-8 py-3 rounded-full font-bold inline-flex items-center gap-2 group/btn">
+                                Learn More <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        <div class="relative aspect-video lg:aspect-auto rounded-2xl overflow-hidden border border-white/10">
+                            <img src="https://picsum.photos/seed/llm/800/600" alt="LLM" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" referrerPolicy="no-referrer">
+                        </div>
+                    </div>
+                    <!-- Predictive -->
+                    <div class="group relative grid lg:grid-cols-2 gap-12 p-10 rounded-[3rem] bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-all duration-500">
+                        <div>
+                            <div class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                                <i data-lucide="bar-chart-3" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold mb-4">Predictive Analytics</h3>
+                            <p class="text-lg text-white/60 leading-relaxed mb-8">
+                                Transform historical data into future foresight with advanced machine learning forecasting models.
+                            </p>
+                            <div class="flex flex-wrap gap-4 mb-10">
+                                <div class="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-black border border-white/5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-primary"></i>
+                                    Churn Prediction
+                                </div>
+                                <div class="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-black border border-white/5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-primary"></i>
+                                    Demand Forecasting
+                                </div>
+                                <div class="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-black border border-white/5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-primary"></i>
+                                    Risk Modeling
+                                </div>
+                            </div>
+                            <a href="#service-predictive" class="bg-primary text-white px-8 py-3 rounded-full font-bold inline-flex items-center gap-2 group/btn">
+                                Learn More <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        <div class="relative aspect-video lg:aspect-auto rounded-2xl overflow-hidden border border-white/10">
+                            <img src="https://picsum.photos/seed/predictive/800/600" alt="Predictive" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" referrerPolicy="no-referrer">
+                        </div>
+                    </div>
+                    <!-- Vision -->
+                    <div class="group relative grid lg:grid-cols-2 gap-12 p-10 rounded-[3rem] bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-all duration-500">
+                        <div>
+                            <div class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                                <i data-lucide="eye" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold mb-4">Computer Vision</h3>
+                            <p class="text-lg text-white/60 leading-relaxed mb-8">
+                                Automated visual inspection, object detection, and spatial analytics for industrial environments.
+                            </p>
+                            <div class="flex flex-wrap gap-4 mb-10">
+                                <div class="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-black border border-white/5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-primary"></i>
+                                    Defect Detection
+                                </div>
+                                <div class="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-black border border-white/5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-primary"></i>
+                                    Spatial Analytics
+                                </div>
+                                <div class="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-black border border-white/5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-primary"></i>
+                                    Biometrics
+                                </div>
+                            </div>
+                            <a href="#service-vision" class="bg-primary text-white px-8 py-3 rounded-full font-bold inline-flex items-center gap-2 group/btn">
+                                Learn More <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        <div class="relative aspect-video lg:aspect-auto rounded-2xl overflow-hidden border border-white/10">
+                            <img src="https://picsum.photos/seed/vision/800/600" alt="Vision" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" referrerPolicy="no-referrer">
+                        </div>
+                    </div>
+                    <!-- Strategy -->
+                    <div class="group relative grid lg:grid-cols-2 gap-12 p-10 rounded-[3rem] bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-all duration-500">
+                        <div>
+                            <div class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                                <i data-lucide="lightbulb" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold mb-4">AI Strategy & Consulting</h3>
+                            <p class="text-lg text-white/60 leading-relaxed mb-8">
+                                End-to-end strategic planning, from data audit to ethical AI framework implementation.
+                            </p>
+                            <div class="flex flex-wrap gap-4 mb-10">
+                                <div class="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-black border border-white/5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-primary"></i>
+                                    AI Readiness Audit
+                                </div>
+                                <div class="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-black border border-white/5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-primary"></i>
+                                    Governance Frameworks
+                                </div>
+                                <div class="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-black border border-white/5">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-primary"></i>
+                                    ROI Analysis
+                                </div>
+                            </div>
+                            <a href="#service-strategy" class="bg-primary text-white px-8 py-3 rounded-full font-bold inline-flex items-center gap-2 group/btn">
+                                Learn More <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        <div class="relative aspect-video lg:aspect-auto rounded-2xl overflow-hidden border border-white/10">
+                            <img src="https://picsum.photos/seed/strategy/800/600" alt="Strategy" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" referrerPolicy="no-referrer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Page -->
+        <section id="industries" class="page-section py-24 bg-surface/30">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h1 class="text-5xl font-bold mb-4">Sector-Specific <span class="text-primary">Intelligence</span></h1>
+                    <p class="text-white/80 max-w-2xl mx-auto">We don't believe in one-size-fits-all. Our AI solutions are custom-engineered to solve the unique challenges of your industry.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Healthcare -->
+                    <a href="#solution-healthcare" class="group p-8 rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="stethoscope" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 flex justify-between items-center">
+                            Healthcare
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-primary"></i>
+                        </h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Predictive diagnostics and personalized treatment plans powered by deep learning.</p>
+                    </a>
+                    <!-- Finance -->
+                    <a href="#solution-finance" class="group p-8 rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="banknote" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 flex justify-between items-center">
+                            Finance
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-primary"></i>
+                        </h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Fraud detection and algorithmic trading with high-frequency data processing.</p>
+                    </a>
+                    <!-- Logistics -->
+                    <a href="#solution-logistics" class="group p-8 rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="truck" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 flex justify-between items-center">
+                            Logistics
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-primary"></i>
+                        </h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Autonomous route planning and real-time supply chain transparency.</p>
+                    </a>
+                    <!-- Security -->
+                    <a href="#solution-security" class="group p-8 rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-red-500/10 text-red-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 flex justify-between items-center">
+                            Security
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-primary"></i>
+                        </h3>
+                        <p class="text-white/60 text-sm leading-relaxed">AI-powered surveillance and proactive threat detection for digital assets.</p>
+                    </a>
+                    <!-- Agriculture -->
+                    <a href="#solution-agriculture" class="group p-8 rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="sprout" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 flex justify-between items-center">
+                            Agriculture
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-primary"></i>
+                        </h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Precision agri-intelligence for yield optimization and resource management.</p>
+                    </a>
+                    <!-- Manufacturing -->
+                    <a href="#solution-manufacturing" class="group p-8 rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 flex justify-between items-center">
+                            Manufacturing
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-primary"></i>
+                        </h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Smart factory systems with predictive maintenance and robotic automation.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach Page -->
+        <section id="approach" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-3xl mb-24">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">Our <span class="text-primary">Methodology</span></h1>
+                    <p class="text-xl text-white/60 leading-relaxed">
+                        We don't just deploy models; we architect intelligence. Our four-step 
+                        process ensures that AI integration is seamless, secure, and 
+                        measurably impactful.
+                    </p>
+                </div>
+
+                <div class="space-y-12">
+                    <div class="grid lg:grid-cols-[100px_1fr] gap-8 p-10 rounded-[3rem] glass border border-white/5">
+                        <div class="text-5xl font-heading font-bold text-primary/20">01</div>
+                        <div>
+                            <h3 class="text-3xl font-bold mb-4">Discovery & Audit</h3>
+                            <p class="text-lg text-white/60 leading-relaxed">We begin by auditing your existing data infrastructure and identifying the highest-ROI opportunities for AI integration within your specific business constraints.</p>
+                        </div>
+                    </div>
+                    <div class="grid lg:grid-cols-[100px_1fr] gap-8 p-10 rounded-[3rem] glass border border-white/5">
+                        <div class="text-5xl font-heading font-bold text-primary/20">02</div>
+                        <div>
+                            <h3 class="text-3xl font-bold mb-4">Rapid Prototyping</h3>
+                            <p class="text-lg text-white/60 leading-relaxed">We build high-fidelity proofs of concept in weeks, not months, allowing you to validate the impact and feasibility of AI solutions before full-scale deployment.</p>
+                        </div>
+                    </div>
+                    <div class="grid lg:grid-cols-[100px_1fr] gap-8 p-10 rounded-[3rem] glass border border-white/5">
+                        <div class="text-5xl font-heading font-bold text-primary/20">03</div>
+                        <div>
+                            <h3 class="text-3xl font-bold mb-4">Hardening & Security</h3>
+                            <p class="text-lg text-white/60 leading-relaxed">Our engineers rigorously test models for bias, security vulnerabilities, and edge-case performance to ensure enterprise-grade reliability.</p>
+                        </div>
+                    </div>
+                    <div class="grid lg:grid-cols-[100px_1fr] gap-8 p-10 rounded-[3rem] glass border border-white/5">
+                        <div class="text-5xl font-heading font-bold text-primary/20">04</div>
+                        <div>
+                            <h3 class="text-3xl font-bold mb-4">Scale & Integration</h3>
+                            <p class="text-lg text-white/60 leading-relaxed">We seamlessly integrate the hardened models into your existing workflows, providing full documentation and training for your internal teams.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <h1 class="text-5xl md:text-6xl font-bold mb-8">Pioneering the <span class="text-primary">Intelligence Era</span></h1>
+                        <p class="text-xl text-white/60 leading-relaxed mb-8">
+                            Aether AI was founded on the belief that artificial intelligence 
+                            should be accessible, ethical, and transformative. We bridge 
+                            the gap between cutting-edge research and enterprise-scale 
+                            implementation.
+                        </p>
+                        <div class="grid grid-cols-2 gap-8">
+                            <div>
+                                <div class="text-4xl font-bold text-primary mb-1">50+</div>
+                                <div class="text-xs uppercase tracking-widest text-white/40 font-bold">Deployments</div>
+                            </div>
+                            <div>
+                                <div class="text-4xl font-bold text-primary mb-1">2023</div>
+                                <div class="text-xs uppercase tracking-widest text-white/40 font-bold">Founded</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aspect-square rounded-[3rem] overflow-hidden border border-white/10">
+                        <img src="https://picsum.photos/seed/about/1000/1000" alt="About Aether" class="w-full h-full object-cover grayscale" referrerPolicy="no-referrer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div>
+                        <h1 class="text-5xl md:text-6xl font-bold mb-8">Let's build the <span class="text-primary">Future.</span></h1>
+                        <p class="text-xl text-white/60 leading-relaxed mb-12">
+                            Ready to transform your organization? Our experts are 
+                            standing by to help you navigate the AI landscape.
+                        </p>
+                        
+                        <div class="space-y-8">
+                            <div class="flex gap-6">
+                                <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                                    <i data-lucide="mail" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email Us</h4>
+                                    <p class="text-white/60">hello@aetherai.com</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Global HQ</h4>
+                                    <p class="text-white/60">123 Intelligence Way, Silicon Valley, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass p-10 rounded-[3rem] border border-white/10">
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-white/60">Full Name</label>
+                                    <input type="text" class="w-full bg-black/40 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-white placeholder:text-white/30" placeholder="John Doe">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-white/60">Email Address</label>
+                                    <input type="email" class="w-full bg-black/40 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-white placeholder:text-white/30" placeholder="john@company.com">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-white/60">Industry</label>
+                                <select class="w-full bg-black/40 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors appearance-none text-white">
+                                    <option class="bg-surface">Healthcare</option>
+                                    <option class="bg-surface">Finance</option>
+                                    <option class="bg-surface">Logistics</option>
+                                    <option class="bg-surface">Manufacturing</option>
+                                    <option class="bg-surface">Other</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-white/60">Message</label>
+                                <textarea rows="4" class="w-full bg-black/40 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-white placeholder:text-white/30" placeholder="Tell us about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detail Pages (Hidden by default, shown via router) -->
+        <!-- Healthcare Detail -->
+        <section id="solution-healthcare" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-xs font-bold uppercase tracking-wider mb-6">Healthcare Solutions</div>
+                        <h1 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">Precision <span class="text-blue-500">Medicine AI</span></h1>
+                        <p class="text-lg text-white/80 leading-relaxed mb-8">Revolutionize patient care with predictive diagnostics, automated medical imaging analysis, and personalized treatment protocols powered by deep learning.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-full font-bold inline-block">Consult an Expert</a>
+                            <a href="#industries" class="glass text-white px-8 py-4 rounded-full font-bold inline-block">Back to Industries</a>
+                        </div>
+                    </div>
+                    <div class="aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="https://picsum.photos/seed/healthcare/1000/1000" alt="Healthcare AI" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Finance Detail -->
+        <section id="solution-finance" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-500 text-xs font-bold uppercase tracking-wider mb-6">Financial Solutions</div>
+                        <h1 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">Algorithmic <span class="text-indigo-500">Wealth Intelligence</span></h1>
+                        <p class="text-lg text-white/80 leading-relaxed mb-8">Navigate the markets with high-frequency data processing, automated fraud detection, and personalized wealth management strategies.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-full font-bold inline-block">Get Insights</a>
+                            <a href="#industries" class="glass text-white px-8 py-4 rounded-full font-bold inline-block">Back to Industries</a>
+                        </div>
+                    </div>
+                    <div class="aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="https://picsum.photos/seed/finance/1000/1000" alt="Financial AI" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logistics Detail -->
+        <section id="solution-logistics" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-bold uppercase tracking-wider mb-6">Logistics Solutions</div>
+                        <h1 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">Autonomous <span class="text-amber-500">Supply Chains</span></h1>
+                        <p class="text-lg text-white/80 leading-relaxed mb-8">Optimize your global operations with AI-driven route planning, predictive maintenance for fleets, and real-time inventory transparency.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-full font-bold inline-block">Optimize Now</a>
+                            <a href="#industries" class="glass text-white px-8 py-4 rounded-full font-bold inline-block">Back to Industries</a>
+                        </div>
+                    </div>
+                    <div class="aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="https://picsum.photos/seed/logistics/1000/1000" alt="Logistics AI" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Detail -->
+        <section id="solution-security" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-bold uppercase tracking-wider mb-6">Security Solutions</div>
+                        <h1 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">Next-Gen <span class="text-red-500">Threat Intel</span></h1>
+                        <p class="text-lg text-white/80 leading-relaxed mb-8">Protect your physical and digital assets with AI-powered surveillance, biometric authentication, and proactive threat detection.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-full font-bold inline-block">Secure Assets</a>
+                            <a href="#industries" class="glass text-white px-8 py-4 rounded-full font-bold inline-block">Back to Industries</a>
+                        </div>
+                    </div>
+                    <div class="aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="https://picsum.photos/seed/security/1000/1000" alt="Security AI" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LLM Service Detail -->
+        <section id="service-llm" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-3xl mb-16">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-8">LLM & <span class="text-primary">Generative AI</span></h1>
+                    <p class="text-xl text-white/80 leading-relaxed mb-12">Harness the power of Large Language Models to automate complex reasoning, generate high-quality content, and build intuitive conversational interfaces.</p>
+                    <a href="#services" class="glass text-white px-8 py-3 rounded-full font-bold inline-block mb-12">Back to Services</a>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-10 rounded-[3rem] glass border border-white/5">
+                        <h3 class="text-2xl font-bold mb-4">Custom Fine-tuning</h3>
+                        <p class="text-white/40">We train models on your proprietary data to ensure domain-specific accuracy and brand voice consistency.</p>
+                    </div>
+                    <div class="p-10 rounded-[3rem] glass border border-white/5">
+                        <h3 class="text-2xl font-bold mb-4">RAG Architectures</h3>
+                        <p class="text-white/40">Retrieval-Augmented Generation allows your AI to access real-time internal documents securely.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Predictive Service Detail -->
+        <section id="service-predictive" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-3xl mb-16">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-8">Predictive <span class="text-primary">Analytics</span></h1>
+                    <p class="text-xl text-white/80 leading-relaxed mb-12">Transform historical data into future foresight. Our predictive models identify patterns and forecast trends for critical business decisions.</p>
+                    <a href="#services" class="glass text-white px-8 py-3 rounded-full font-bold inline-block mb-12">Back to Services</a>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-10 rounded-[3rem] glass border border-white/5">
+                        <h3 class="text-2xl font-bold mb-4">Trend Forecasting</h3>
+                        <p class="text-white/40">Anticipate market shifts and consumer behavior with advanced time-series analysis.</p>
+                    </div>
+                    <div class="p-10 rounded-[3rem] glass border border-white/5">
+                        <h3 class="text-2xl font-bold mb-4">Risk Modeling</h3>
+                        <p class="text-white/40">Identify and mitigate operational and financial risks before they impact your bottom line.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agriculture Detail -->
+        <section id="solution-agriculture" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-bold uppercase tracking-wider mb-6">Agriculture Solutions</div>
+                        <h1 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">Precision <span class="text-emerald-500">Agri-Intelligence</span></h1>
+                        <p class="text-lg text-white/80 leading-relaxed mb-8">Maximize your yields and minimize resource waste with satellite-driven crop monitoring and automated irrigation systems.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="bg-emerald-600 text-white px-8 py-4 rounded-full font-bold inline-block">Get Started</a>
+                            <a href="#industries" class="glass text-white px-8 py-4 rounded-full font-bold inline-block">Back to Industries</a>
+                        </div>
+                    </div>
+                    <div class="aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="https://picsum.photos/seed/agri/1000/1000" alt="Agriculture AI" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manufacturing Detail -->
+        <section id="solution-manufacturing" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-500 text-xs font-bold uppercase tracking-wider mb-6">Manufacturing Solutions</div>
+                        <h1 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">Smart <span class="text-cyan-500">Factory Systems</span></h1>
+                        <p class="text-lg text-white/80 leading-relaxed mb-8">Revolutionize your production line with predictive maintenance, robotic process automation, and real-time quality control.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="bg-cyan-600 text-white px-8 py-4 rounded-full font-bold inline-block">Modernize Now</a>
+                            <a href="#industries" class="glass text-white px-8 py-4 rounded-full font-bold inline-block">Back to Industries</a>
+                        </div>
+                    </div>
+                    <div class="aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="https://picsum.photos/seed/manufacturing/1000/1000" alt="Manufacturing AI" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Service Detail -->
+        <section id="service-vision" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-3xl mb-16">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-8">Computer <span class="text-primary">Vision</span></h1>
+                    <p class="text-xl text-white/80 leading-relaxed mb-12">Enable your systems to see, identify, and process visual information with human-like precision and industrial-grade speed.</p>
+                    <a href="#services" class="glass text-white px-8 py-3 rounded-full font-bold inline-block mb-12">Back to Services</a>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-10 rounded-[3rem] glass border border-white/5">
+                        <h3 class="text-2xl font-bold mb-4">Object Detection</h3>
+                        <p class="text-white/40">Real-time identification and tracking of assets, products, or anomalies in any environment.</p>
+                    </div>
+                    <div class="p-10 rounded-[3rem] glass border border-white/5">
+                        <h3 class="text-2xl font-bold mb-4">Quality Control</h3>
+                        <p class="text-white/40">Automated visual inspection for manufacturing lines with sub-millimeter precision.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategy Service Detail -->
+        <section id="service-strategy" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-3xl mb-16">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-8">AI Strategy & <span class="text-primary">Consulting</span></h1>
+                    <p class="text-xl text-white/80 leading-relaxed mb-12">Don't just implement AI—implement the *right* AI. We help enterprises navigate the complex landscape of machine learning.</p>
+                    <a href="#services" class="glass text-white px-8 py-3 rounded-full font-bold inline-block mb-12">Back to Services</a>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-10 rounded-[3rem] glass border border-white/5">
+                        <h3 class="text-2xl font-bold mb-4">AI Readiness Audit</h3>
+                        <p class="text-white/40">Comprehensive assessment of your data, infrastructure, and talent capabilities.</p>
+                    </div>
+                    <div class="p-10 rounded-[3rem] glass border border-white/5">
+                        <h3 class="text-2xl font-bold mb-4">Roadmap Design</h3>
+                        <p class="text-white/40">Prioritized implementation plan focused on high-ROI AI opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Careers Page -->
+        <section id="careers" class="page-section py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-3xl mb-16">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-8">Join the <span class="text-primary">Intelligence</span> Team</h1>
+                    <p class="text-xl text-white/60 leading-relaxed mb-12">We are always looking for visionary engineers, data scientists, and strategists to help us architect the future.</p>
+                </div>
+                <div class="grid gap-6">
+                    <div class="p-8 rounded-3xl glass border border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Senior AI Engineer</h3>
+                            <div class="flex gap-4 text-sm text-white/40">
+                                <span>Full-time</span>
+                                <span>•</span>
+                                <span>Remote / SF</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white px-6 py-2 rounded-full text-sm font-bold transition-all">Apply Now</a>
+                    </div>
+                    <div class="p-8 rounded-3xl glass border border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Machine Learning Researcher</h3>
+                            <div class="flex gap-4 text-sm text-white/40">
+                                <span>Full-time</span>
+                                <span>•</span>
+                                <span>Remote / London</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white px-6 py-2 rounded-full text-sm font-bold transition-all">Apply Now</a>
+                    </div>
+                    <div class="p-8 rounded-3xl glass border border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">AI Strategy Consultant</h3>
+                            <div class="flex gap-4 text-sm text-white/60">
+                                <span>Contract</span>
+                                <span>•</span>
+                                <span>Remote</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white px-6 py-2 rounded-full text-sm font-bold transition-all">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy -->
+        <section id="privacy" class="page-section py-24">
+            <div class="max-w-4xl mx-auto px-6">
+                <h1 class="text-4xl font-bold mb-8">Privacy <span class="text-primary">Policy</span></h1>
+                <div class="prose prose-invert max-w-none text-white/80 space-y-6">
+                    <p>Your privacy is important to us. It is Aether AI's policy to respect your privacy regarding any information we may collect from you across our website.</p>
+                    <h3 class="text-xl font-bold text-white">1. Information We Collect</h3>
+                    <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent.</p>
+                    <h3 class="text-xl font-bold text-white">2. Data Security</h3>
+                    <p>We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we’ll protect within commercially acceptable means to prevent loss and theft.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms of Service -->
+        <section id="terms" class="page-section py-24">
+            <div class="max-w-4xl mx-auto px-6">
+                <h1 class="text-4xl font-bold mb-8">Terms of <span class="text-primary">Service</span></h1>
+                <div class="prose prose-invert max-w-none text-white/80 space-y-6">
+                    <p>By accessing our website, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.</p>
+                    <h3 class="text-xl font-bold text-white">1. Use License</h3>
+                    <p>Permission is granted to temporarily download one copy of the materials on Aether AI's website for personal, non-commercial transitory viewing only.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cookie Policy -->
+        <section id="cookies" class="page-section py-24">
+            <div class="max-w-4xl mx-auto px-6">
+                <h1 class="text-4xl font-bold mb-8">Cookie <span class="text-primary">Policy</span></h1>
+                <div class="prose prose-invert max-w-none text-white/80 space-y-6">
+                    <p>We use cookies to help improve your experience of our website. This cookie policy is part of Aether AI's privacy policy, and covers the use of cookies between your device and our site.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-24 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-24">
+                <div class="col-span-2 lg:col-span-1">
+                    <a href="#home" class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <i data-lucide="cpu" class="text-white w-5 h-5"></i>
+                        </div>
+                        <span class="text-lg font-heading font-bold tracking-tighter">AETHER<span class="text-primary">AI</span></span>
+                    </a>
+                    <p class="text-white/60 text-sm leading-relaxed mb-8">Architecting the next generation of enterprise intelligence systems.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-white/60 hover:text-primary transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-white/60 hover:text-primary transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Solutions</h4>
+                    <ul class="space-y-4 text-sm text-white/60">
+                        <li><a href="#solution-healthcare" class="hover:text-primary transition-colors">Healthcare AI</a></li>
+                        <li><a href="#solution-finance" class="hover:text-primary transition-colors">Financial Intelligence</a></li>
+                        <li><a href="#solution-logistics" class="hover:text-primary transition-colors">Logistics Optimization</a></li>
+                        <li><a href="#solution-security" class="hover:text-primary transition-colors">Security Systems</a></li>
+                        <li><a href="#solution-agriculture" class="hover:text-primary transition-colors">Agriculture AI</a></li>
+                        <li><a href="#solution-manufacturing" class="hover:text-primary transition-colors">Smart Factory</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Company</h4>
+                    <ul class="space-y-4 text-sm text-white/60">
+                        <li><a href="#about" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="#approach" class="hover:text-primary transition-colors">Methodology</a></li>
+                        <li><a href="#careers" class="hover:text-primary transition-colors">Careers</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Legal</h4>
+                    <ul class="space-y-4 text-sm text-white/60">
+                        <li><a href="#privacy" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="#terms" class="hover:text-primary transition-colors">Terms of Service</a></li>
+                        <li><a href="#cookies" class="hover:text-primary transition-colors">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/40 font-bold uppercase tracking-widest">
+                <div>&copy; 2026 Aether AI Consultancy. All rights reserved.</div>
+                <div class="flex gap-8">
+                    <span>Built with Intelligence</span>
+                    <span>v4.0.0</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#home" id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/20 opacity-0 invisible transition-all duration-300 z-50 hover:scale-110">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </a>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Simple Hash Router
+        function handleRoute() {
+            const hash = window.location.hash || '#home';
+            const pageId = hash.substring(1);
+            
+            // Hide all sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show active section
+            const activeSection = document.getElementById(pageId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+
+            // Update Nav Links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === hash) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            // Close mobile menu
+            document.getElementById('mobile-menu').classList.add('hidden');
+            document.getElementById('menu-icon').setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        }
+
+        window.addEventListener('hashchange', handleRoute);
+        window.addEventListener('load', handleRoute);
+
+        // Mobile Menu Toggle
+        const toggleBtn = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        toggleBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            menuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
+            lucide.createIcons();
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('back-to-top');
+            
+            if (window.scrollY > 20) {
+                navbar.classList.add('glass', 'shadow-lg');
+                navbar.classList.remove('py-5');
+                navbar.classList.add('py-3');
+            } else {
+                navbar.classList.remove('glass', 'shadow-lg');
+                navbar.classList.add('py-5');
+                navbar.classList.remove('py-3');
+            }
+
+            if (window.scrollY > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+    </script>
+</body>
+</html>
